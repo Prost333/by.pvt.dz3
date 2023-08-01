@@ -4,13 +4,13 @@ public class UserResponse {
     private int id;
     private  String fullname;
     private String login;
-    private by.pvt.hw3.domain.Role role;
 
-    public UserResponse(int id, String fullname, String login,by.pvt.hw3.domain.Role role) {
+
+    public UserResponse(int id, String fullname, String login) {
         this.id = id;
         this.fullname = fullname;
         this.login = login;
-        this.role = role;
+
     }
 
 
@@ -39,13 +39,7 @@ public class UserResponse {
         this.login = login;
     }
 
-    public by.pvt.hw3.domain.Role getRole() {
-        return role;
-    }
 
-    public void setRole(by.pvt.hw3.domain.Role role) {
-        this.role = role;
-    }
 
     @Override
     public String toString() {
@@ -53,7 +47,6 @@ public class UserResponse {
                 "id=" + id +
                 ", fullname='" + fullname + '\'' +
                 ", login='" + login + '\'' +
-                ", role=" + role +
                 '}';
     }
 }
