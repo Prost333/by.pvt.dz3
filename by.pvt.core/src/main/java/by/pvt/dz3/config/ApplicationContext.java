@@ -26,7 +26,7 @@ public class ApplicationContext {
     private   BasketRepository basketRepository;
 
 
-    public ApplicationContext( ) {
+    private ApplicationContext( ) {
         this.userRepository = new UserRepository();
         this.goodRepository = new GoodRepository();
         this.goodMapping = new GoodMapping();

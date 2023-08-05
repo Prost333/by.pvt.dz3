@@ -1,5 +1,6 @@
 package by.pvt.dz3.service.imp;
 
+import by.pvt.dz3.domain.Role;
 import by.pvt.dz3.domain.User;
 import by.pvt.dz3.mapping.UserMapping;
 import by.pvt.dz3.repository.UserRepository;
@@ -50,5 +51,11 @@ public class UserServerImp implements UserService {
     @Override
     public User findUserforID(int id) {
         return null;
+    }
+
+    @Override
+    public User createUser(int id, String login, String password, String name, String surname) {
+        User user = new User(id,name,surname,password,login, Role.CLIENT);
+        return user;
     }
 }

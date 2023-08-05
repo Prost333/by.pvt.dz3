@@ -10,7 +10,8 @@ import java.util.Optional;
 
 public class UserRepository extends FileWorker implements UserService {
     public static List<User> userList = new ArrayList<>();
-    public static String way = "C:\\Project Java\\by.pvt.dz3\\by.pvt.core\\src\\main\\java\\by\\pvt\\hw3\\data\\Users.txt";
+    public static String way = "C:\\Project Java\\by.pvt.dz3\\by.pvt.core\\src\\main\\java\\by\\pvt\\dz3\\data\\Users.txt";
+
 
     public UserRepository() {
     }
@@ -28,6 +29,10 @@ public class UserRepository extends FileWorker implements UserService {
         saveUser();
     }
 
+    public List<User> AllUsers() {
+        deserializeObject(way);
+        return userList;
+    }
 
 
     public List<User> showAllUsers() {
@@ -49,6 +54,12 @@ public class UserRepository extends FileWorker implements UserService {
         }
         return users2.get();
     }
+
+    @Override
+    public User createUser(int id,String login, String password, String name, String surname) {
+        return null;
+    }
+
     public User findUserforLogin(String login) {
         List<User> users = update();
         Optional<User> users2 = userList.stream().filter(user -> user.getLogin() == login).findFirst();

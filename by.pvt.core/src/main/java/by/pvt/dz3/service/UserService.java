@@ -13,6 +13,7 @@ public interface UserService {
  void deleteUser(User user);
  List<User> showAllUsers();
  User findUserforID(int id);
+ User createUser(int id,String login, String password, String name, String surname);
 
 }
 
